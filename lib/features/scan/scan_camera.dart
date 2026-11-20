@@ -5,11 +5,6 @@ import '../../domain/repositories/fruit_scan_repository.dart';
 
 enum CameraStatus { initializing, ready, denied, unavailable }
 
-/// Pembungkus kamera (package `camera`) untuk layar Scan.
-///
-/// SLOT KAMERA: [controller] -> preview, [capture] -> foto untuk dikirim ke
-/// backend lewat FruitScanRepository.analyzePhoto, dan [startLiveStream]
-/// -> frame untuk FruitScanRepository.detectLive.
 class ScanCamera extends ChangeNotifier {
   CameraController? controller;
   CameraStatus status = CameraStatus.initializing;
@@ -74,8 +69,7 @@ class ScanCamera extends ChangeNotifier {
     _safeNotify();
   }
 
-  /// 1x atau 2x.
-  Future<void> setZoomStep(double step) async {
+    Future<void> setZoomStep(double step) async {
     final c = controller;
     if (c == null || !isReady) {
       zoom = step;
@@ -90,8 +84,7 @@ class ScanCamera extends ChangeNotifier {
     _safeNotify();
   }
 
-  /// Kunci fokus & exposure (AE/AF lock).
-  Future<void> toggleLock() async {
+    Future<void> toggleLock() async {
     final c = controller;
     locked = !locked;
     if (c != null && isReady) {
@@ -103,8 +96,7 @@ class ScanCamera extends ChangeNotifier {
     _safeNotify();
   }
 
-  /// Ambil foto. Mengembalikan path file atau null (mis. kamera tidak tersedia).
-  Future<String?> capture() async {
+    Future<String?> capture() async {
     final c = controller;
     if (c == null || !isReady || c.value.isTakingPicture) return null;
     try {
@@ -116,8 +108,7 @@ class ScanCamera extends ChangeNotifier {
     }
   }
 
-  /// Kirim frame ke [onFrame] maksimal 1x per [interval].
-  Future<void> startLiveStream(
+    Future<void> startLiveStream(
     Future<void> Function(ScanFrame frame) onFrame, {
     Duration interval = const Duration(seconds: 1),
   }) async {

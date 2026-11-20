@@ -15,7 +15,6 @@ import '../../shared/widgets/app_popups.dart';
 import '../../shared/widgets/pill_badge.dart';
 import '../../core/theme/app_colors.dart';
 
-/// Gambar toko: foto dari aset/URL, atau tile emoji jika belum ada.
 class StoreImage extends StatelessWidget {
   const StoreImage({super.key, required this.store, this.size = 80});
 
@@ -48,7 +47,6 @@ class StoreImage extends StatelessWidget {
   }
 }
 
-/// Status "Open" / "Closed".
 class OpenBadge extends StatelessWidget {
   const OpenBadge({super.key, required this.open});
   final bool open;
@@ -61,7 +59,6 @@ class OpenBadge extends StatelessWidget {
       );
 }
 
-/// Detail toko (View details / tap kartu toko).
 Future<void> showStoreDetailSheet(BuildContext context, FruitStore store) {
   final stores = context.read<StoreController>();
   return showAppSheet<void>(

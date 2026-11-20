@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../../core/theme/app_colors.dart';
 
-/// Kotak informasi (hijau muda secara default).
 class InfoBanner extends StatelessWidget {
   const InfoBanner({
     super.key,

@@ -6,7 +6,6 @@ import '../../core/theme/app_shadows.dart';
 
 enum AppButtonKind { primary, tonal, neutral, danger, dangerSoft, ghost }
 
-/// Tombol pil serbaguna (primary, tonal, neutral, danger, ghost).
 class AppButton extends StatelessWidget {
   const AppButton({
     super.key,

@@ -16,7 +16,6 @@ import '../../shared/widgets/surface_card.dart';
 import 'empty_list_view.dart';
 import 'widgets/haul_preview_sheet.dart';
 
-/// Tab "History (Done)": riwayat, atau empty state "No shopping history yet".
 class HistoryView extends StatelessWidget {
   const HistoryView({super.key});
 

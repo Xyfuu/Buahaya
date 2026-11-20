@@ -5,7 +5,6 @@ import '../domain/repositories/auth_repository.dart';
 
 enum AuthStatus { unknown, authenticated, unauthenticated }
 
-/// State sesi pengguna. Metode mengembalikan pesan error (null = sukses).
 class AuthController extends ChangeNotifier {
   AuthController(this._repo);
 

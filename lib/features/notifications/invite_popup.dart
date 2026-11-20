@@ -13,7 +13,6 @@ import '../../shared/widgets/app_button.dart';
 import '../../shared/widgets/app_popups.dart';
 import '../../shared/widgets/app_toast.dart';
 
-/// Pop-up notifikasi (lonceng): undangan shopping list. Tombol Reject / Accept.
 Future<void> showInvitePopup(BuildContext context) {
   return showPopup<void>(
     context,

@@ -11,7 +11,6 @@ import '../../../shared/widgets/app_text_field.dart';
 import '../../../shared/widgets/app_toast.dart';
 import '../../../shared/widgets/pill_badge.dart';
 
-/// Popup "Complete Shopping?". Mengembalikan true bila diselesaikan.
 Future<bool> showCompleteShoppingPopup(BuildContext context, ShoppingList list) async {
   final shopping = context.read<ShoppingController>();
   final verified = list.planItems.where((i) => i.inCart > 0).toList();
@@ -93,7 +92,6 @@ Future<bool> showCompleteShoppingPopup(BuildContext context, ShoppingList list) 
   return true;
 }
 
-/// Popup "Invite friends to shop together".
 Future<void> showInvitePartnerPopup(BuildContext context, ShoppingList list) {
   return showPopup<void>(
     context,
@@ -219,7 +217,6 @@ class _InvitePartnerCardState extends State<_InvitePartnerCard> {
   }
 }
 
-/// Konfirmasi generik (hapus list, hapus anggota, stop sharing).
 Future<bool> showDangerConfirm(
   BuildContext context, {
   required IconData icon,

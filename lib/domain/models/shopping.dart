@@ -17,7 +17,7 @@ class ListMember {
 
   final String id;
   final String name;
-  final String handle; // username atau email
+  final String handle;
   final MemberRole role;
   final MemberStatus status;
 
@@ -98,7 +98,6 @@ class TripFruit {
   final int count;
 }
 
-/// Riwayat belanja (list yang sudah selesai).
 class ShoppingTrip {
   const ShoppingTrip({
     required this.id,

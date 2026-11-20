@@ -5,7 +5,6 @@ import '../../domain/models/profile.dart';
 import '../../domain/models/shopping.dart';
 import '../../domain/models/store.dart';
 
-/// Data awal untuk repository mock (sesuai desain Figma).
 abstract final class MockSeed {
   static const apple = Fruit(id: 'apple', name: 'Apple', emoji: '🍎', imageUrl: AppAssets.fruitApple);
   static const orange = Fruit(id: 'orange', name: 'Orange', emoji: '🍊', imageUrl: AppAssets.fruitOrange);

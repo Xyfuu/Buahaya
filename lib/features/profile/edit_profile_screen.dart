@@ -18,7 +18,6 @@ import '../../shared/widgets/surface_card.dart';
 import '../../shared/widgets/user_avatar.dart';
 import '../auth/widgets/reset_link_sheet.dart';
 
-/// Frame Figma "Edit profile" + pop-up "Change password".
 class EditProfileScreen extends StatefulWidget {
   const EditProfileScreen({super.key});
 

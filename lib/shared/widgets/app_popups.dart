@@ -6,8 +6,6 @@ import '../../core/extensions/context_x.dart';
 import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_shadows.dart';
 
-/// Popup di tengah/atas layar dengan latar blur + scrim.
-/// Halaman di belakangnya tidak bisa di-scroll (route modal menyerap sentuhan).
 Future<T?> showPopup<T>(
   BuildContext context, {
   required WidgetBuilder builder,
@@ -60,7 +58,6 @@ Future<T?> showPopup<T>(
   );
 }
 
-/// Kartu putih rounded 28 untuk isi popup.
 class PopupCard extends StatelessWidget {
   const PopupCard({super.key, required this.child, this.padding = const EdgeInsets.all(24)});
 
@@ -82,7 +79,6 @@ class PopupCard extends StatelessWidget {
   }
 }
 
-/// Popup konfirmasi: ikon bulat + judul + pesan + aksi.
 class ConfirmPopup extends StatelessWidget {
   const ConfirmPopup({
     super.key,
@@ -132,7 +128,6 @@ class ConfirmPopup extends StatelessWidget {
   }
 }
 
-/// Bottom sheet modal. Isi tidak di-scroll; naik mengikuti keyboard.
 Future<T?> showAppSheet<T>(
   BuildContext context, {
   required WidgetBuilder builder,

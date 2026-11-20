@@ -2,8 +2,6 @@ import '../../domain/models/profile.dart';
 import '../../domain/repositories/auth_repository.dart';
 import 'mock_seed.dart';
 
-/// Repository mock: menerima kredensial apa pun yang tidak kosong.
-/// Ganti dengan implementasi API (POST /auth/login, dst).
 class MockAuthRepository implements AuthRepository {
   UserProfile? _session;
 

@@ -15,15 +15,14 @@ class FruitStore {
   final String id;
   final String name;
   final double distanceKm;
-  final int opensAtMinutes; // menit sejak 00:00
+  final int opensAtMinutes;
   final int closesAtMinutes;
   final double lat;
   final double lng;
   final String area;
   final String address;
 
-  /// Path aset (assets/...), URL (http...), atau null untuk memakai emoji.
-  final String? imageUrl;
+    final String? imageUrl;
 
   bool isOpenAt(DateTime t) {
     final m = t.hour * 60 + t.minute;

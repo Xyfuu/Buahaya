@@ -23,8 +23,7 @@ class ProfileController extends ChangeNotifier {
     notifyListeners();
   }
 
-  /// Kembalikan pesan error atau null.
-  Future<String?> update({
+    Future<String?> update({
     required String fullName,
     required String username,
     required String email,
@@ -52,7 +51,7 @@ class ProfileController extends ChangeNotifier {
   Future<void> setNotifications(bool enabled) async {
     final current = profile;
     if (current == null) return;
-    profile = current.copyWith(notificationsEnabled: enabled); // optimistis
+    profile = current.copyWith(notificationsEnabled: enabled);
     notifyListeners();
     try {
       profile = await _repo.setNotificationsEnabled(enabled);

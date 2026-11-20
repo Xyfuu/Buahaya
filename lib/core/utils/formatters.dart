@@ -3,10 +3,8 @@ const _months = [
   'August', 'September', 'October', 'November', 'December'
 ];
 
-/// 12 July 2025
 String formatDate(DateTime d) => '${d.day} ${_months[d.month - 1]} ${d.year}';
 
-/// "42 min", "1 h 5 min"
 String formatDuration(Duration d) {
   final m = d.inMinutes;
   if (m < 60) return '$m min';
@@ -15,7 +13,6 @@ String formatDuration(Duration d) {
   return r == 0 ? '$h h' : '$h h $r min';
 }
 
-/// "2m ago", "3h ago", "5d ago"
 String timeAgo(DateTime t, {DateTime? now}) {
   final diff = (now ?? DateTime.now()).difference(t);
   if (diff.inMinutes < 1) return 'just now';

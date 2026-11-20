@@ -4,7 +4,6 @@ import '../../core/theme/app_colors.dart';
 import '../../domain/models/profile.dart';
 import 'app_image.dart';
 
-/// Avatar pengguna: aset, URL, file hasil galeri, atau emoji.
 class UserAvatar extends StatelessWidget {
   const UserAvatar({super.key, required this.profile, this.size = 32});
 

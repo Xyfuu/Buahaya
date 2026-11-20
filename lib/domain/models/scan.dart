@@ -1,12 +1,11 @@
 import 'fruit.dart';
 
-/// Hasil deteksi satu jenis buah pada frame/foto.
 class FruitDetection {
   const FruitDetection({required this.fruit, required this.total, required this.fresh});
 
   final Fruit fruit;
-  final int total; // semua yang terdeteksi
-  final int fresh; // yang dinilai segar
+  final int total;
+  final int fresh;
 }
 
 class LiveDetection {

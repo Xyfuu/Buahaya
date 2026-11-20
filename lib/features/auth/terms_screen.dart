@@ -7,13 +7,10 @@ import '../../shared/widgets/app_button.dart';
 import '../../shared/widgets/sub_screen_header.dart';
 import 'terms_content.dart';
 
-/// Frame Figma "terms and conditions".
-/// Mengembalikan true (Accept) / false (Decline) lewat context.pop.
 class TermsScreen extends StatefulWidget {
   const TermsScreen({super.key, this.readOnly = false});
 
-  /// true -> hanya baca (dari Help), tanpa tombol Accept/Decline.
-  final bool readOnly;
+    final bool readOnly;
 
   @override
   State<TermsScreen> createState() => _TermsScreenState();
@@ -121,8 +118,7 @@ class _TermsScreenState extends State<TermsScreen> {
                 ),
               ),
             ),
-            // Footer tetap: tidak ikut scroll.
-            Container(
+                        Container(
               padding: const EdgeInsets.fromLTRB(16, 8, 16, 12),
               decoration: const BoxDecoration(
                 color: AppColors.background,

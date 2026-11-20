@@ -5,10 +5,6 @@ import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_shadows.dart';
 import 'app_image.dart';
 
-/// Logo Buahaya.
-///
-/// [showCircles] = true  -> 3 layer: lingkaran putih (luar), hijau (tengah), logo (dalam).
-/// [showCircles] = false -> logo saja, tanpa lingkaran.
 class BrandMark extends StatelessWidget {
   const BrandMark({
     super.key,
@@ -39,9 +35,8 @@ class BrandMark extends StatelessWidget {
       );
     }
 
-    // Layer 1: lingkaran putih (luar), dengan bayangan
-    final middle = size * 0.8; // Layer 2: lingkaran hijau (tengah)
-    final logo = middle * 0.72; // Layer 3: logo (dalam)
+        final middle = size * 0.8;
+    final logo = middle * 0.72;
 
     return Container(
       width: size,
@@ -71,8 +66,7 @@ class BrandMark extends StatelessWidget {
     );
   }
 
-  /// Cadangan jika file logo belum ada.
-  Widget _fallbackIcon(double s) => Icon(
+    Widget _fallbackIcon(double s) => Icon(
         Icons.check_circle_rounded,
         size: s,
         color: AppColors.primary,

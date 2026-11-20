@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-/// Buka Google Maps (rute) ke koordinat tujuan.
 Future<void> openDirections(
   BuildContext context, {
   required double lat,

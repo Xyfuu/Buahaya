@@ -8,8 +8,6 @@ import '../../../domain/models/scan.dart';
 import '../../../domain/models/shopping.dart';
 import '../scan_camera.dart';
 
-/// Area preview kamera (siap diganti/dikembangkan). Bila kamera tidak tersedia,
-/// menampilkan placeholder gelap + pesan + tombol coba lagi.
 class CameraPreviewSlot extends StatelessWidget {
   const CameraPreviewSlot({super.key, required this.camera, required this.onRetry});
 
@@ -67,7 +65,6 @@ class CameraPreviewSlot extends StatelessWidget {
   }
 }
 
-/// Chip "● Live AI Detector: 4 Apples Detected".
 class LiveDetectorChip extends StatelessWidget {
   const LiveDetectorChip({super.key, required this.detection});
 
@@ -130,7 +127,6 @@ class RoundOverlayButton extends StatelessWidget {
   }
 }
 
-/// Kartu "Shopping List" (collapsed/expanded) di atas kamera.
 class ScanListDropdown extends StatelessWidget {
   const ScanListDropdown({super.key, required this.list, required this.expanded, required this.onToggle});
 
@@ -257,7 +253,6 @@ class _ProgressRow extends StatelessWidget {
   }
 }
 
-/// Pil zoom "1x | 2x".
 class ZoomPill extends StatelessWidget {
   const ZoomPill({super.key, required this.zoom, required this.onChanged});
 
@@ -292,7 +287,6 @@ class ZoomPill extends StatelessWidget {
   }
 }
 
-/// Tombol shutter besar.
 class ShutterButton extends StatelessWidget {
   const ShutterButton({super.key, required this.onTap, required this.busy});
 

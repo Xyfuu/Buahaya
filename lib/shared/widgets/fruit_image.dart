@@ -4,7 +4,6 @@ import '../../core/theme/app_colors.dart';
 import '../../domain/models/fruit.dart';
 import 'app_image.dart';
 
-/// Gambar buah: foto dari aset/URL, atau emoji jika belum ada.
 class FruitImage extends StatelessWidget {
   const FruitImage({super.key, required this.fruit, this.size = 56, this.radius = 12});
 

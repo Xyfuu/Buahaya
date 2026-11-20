@@ -29,8 +29,7 @@ class _BuahayaAppState extends State<BuahayaApp> {
     widget.deps.auth.restoreSession();
   }
 
-  /// Muat / bersihkan data saat status sesi berubah.
-  void _onAuthChanged() {
+    void _onAuthChanged() {
     final d = widget.deps;
     if (d.auth.status == _lastStatus) return;
     _lastStatus = d.auth.status;
@@ -70,8 +69,7 @@ class _BuahayaAppState extends State<BuahayaApp> {
         debugShowCheckedModeBanner: false,
         theme: AppTheme.light,
         routerConfig: _router,
-        // Semua layar memakai lebar yang sama (maks. 480) agar konsisten di semua ukuran Android.
-        builder: (context, child) => ColoredBox(
+                builder: (context, child) => ColoredBox(
           color: AppColors.background,
           child: Center(
             child: ConstrainedBox(

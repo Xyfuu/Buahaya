@@ -9,7 +9,6 @@ import '../../shared/widgets/app_toast.dart';
 import '../../shared/widgets/sub_screen_header.dart';
 import 'widgets/fruit_picker.dart';
 
-/// Frame Figma "Add a new list" (judul "Add to shopping list"): ubah rencana list aktif.
 class AddToListScreen extends StatefulWidget {
   const AddToListScreen({super.key});
 

@@ -18,7 +18,6 @@ import '../../shared/widgets/surface_card.dart';
 import '../explore/store_detail_sheet.dart';
 import 'guide_card.dart';
 
-/// Frame Figma "Home" / "Home no shopping list".
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -27,8 +26,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  // Kartu berikutnya mengintip dari kanan; dots mengikuti posisi geser (page fraction).
-  final _pager = PageController(viewportFraction: 0.8);
+    final _pager = PageController(viewportFraction: 0.8);
 
   @override
   void dispose() {

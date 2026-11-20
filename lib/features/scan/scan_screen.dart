@@ -19,8 +19,6 @@ import '../../shared/widgets/sub_screen_header.dart';
 import 'scan_camera.dart';
 import 'widgets/scan_widgets.dart';
 
-/// Frame Figma: "Scan fruit" (ada/tanpa shopping list, dropdown list),
-/// "Create a list" popup dan "Confirm results" sheet.
 class ScanScreen extends StatefulWidget {
   const ScanScreen({super.key});
 
@@ -68,8 +66,7 @@ class _ScanScreenState extends State<ScanScreen> with WidgetsBindingObserver {
     }
   }
 
-  // ------------------------------------------------------------------ camera
-  Future<void> _startCamera() async {
+    Future<void> _startCamera() async {
     await _cam.initialize();
     if (!mounted) return;
     _startLive();
@@ -78,16 +75,14 @@ class _ScanScreenState extends State<ScanScreen> with WidgetsBindingObserver {
   void _startLive() {
     _fallbackTimer?.cancel();
     if (_cam.isReady) {
-      // Frame kamera nyata -> backend/model AI (throttle 1 detik).
-      _cam.startLiveStream((frame) async {
+            _cam.startLiveStream((frame) async {
         try {
           final r = await _repo.detectLive(frame);
           if (mounted) setState(() => _live = r);
         } catch (_) {}
       });
     } else if (AppConfig.useMockData) {
-      // Tanpa kamera (emulator) + data mock: tetap tampilkan deteksi demo.
-      _fallbackTimer = Timer.periodic(const Duration(seconds: 1), (_) async {
+            _fallbackTimer = Timer.periodic(const Duration(seconds: 1), (_) async {
         final r = await _repo.detectLive(const ScanFrame(width: 0, height: 0, planes: [], rowStrides: []));
         if (mounted) setState(() => _live = r);
       });
@@ -148,8 +143,7 @@ class _ScanScreenState extends State<ScanScreen> with WidgetsBindingObserver {
 
   void _close() => context.canPop() ? context.pop() : context.go(AppRoutes.home);
 
-  // ------------------------------------------------------------------ actions
-  Future<void> _capture() async {
+    Future<void> _capture() async {
     if (_capturing) return;
     setState(() => _capturing = true);
     try {
@@ -201,8 +195,7 @@ class _ScanScreenState extends State<ScanScreen> with WidgetsBindingObserver {
     }
   }
 
-  // ------------------------------------------------------------------ build
-  @override
+    @override
   Widget build(BuildContext context) {
     final text = context.textTheme;
     final list = context.watch<ShoppingController>().active;
@@ -292,8 +285,7 @@ class _ScanScreenState extends State<ScanScreen> with WidgetsBindingObserver {
                 ),
               ),
             ),
-            // Footer tetap
-            Container(
+                        Container(
               margin: const EdgeInsets.fromLTRB(16, 0, 16, 12),
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(color: AppColors.surfaceContainer, borderRadius: BorderRadius.circular(16)),
@@ -332,8 +324,6 @@ class _ScanScreenState extends State<ScanScreen> with WidgetsBindingObserver {
   }
 }
 
-/// Sheet "Confirm fresh fruit" (frame Figma "Scan fruit Confirm results").
-/// Pop(true) bila dikonfirmasi, pop(false) untuk "Scan again".
 class ConfirmScanSheet extends StatelessWidget {
   const ConfirmScanSheet({super.key, required this.result});
 

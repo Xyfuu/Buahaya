@@ -20,7 +20,6 @@ import '../../shared/widgets/surface_card.dart';
 import '../../shared/widgets/user_avatar.dart';
 import '../lists/widgets/haul_preview_sheet.dart';
 
-/// Frame Figma "Profile": kartu identitas, statistik, fruit haul, pengaturan, logout.
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
 

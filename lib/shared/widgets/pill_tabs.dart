@@ -10,7 +10,6 @@ class PillTab {
   final String label;
 }
 
-/// Segmented control berbentuk pil (Log in | Sign up, Active list | History).
 class PillTabs extends StatelessWidget {
   const PillTabs({super.key, required this.tabs, required this.selectedIndex, required this.onChanged});
 

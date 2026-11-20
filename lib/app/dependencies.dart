@@ -17,10 +17,6 @@ import '../domain/repositories/profile_repository.dart';
 import '../domain/repositories/shopping_repository.dart';
 import '../domain/repositories/store_repository.dart';
 
-/// Titik tunggal wiring repository -> controller.
-///
-/// INTEGRASI BACKEND: buat implementasi interface di lib/domain/repositories/
-/// (mis. ApiAuthRepository) lalu tukar di [_buildRepositories].
 class AppDependencies {
   AppDependencies._(this.scanRepository, this.auth, this.profile, this.shopping,
       this.notifications, this.stores);
@@ -53,8 +49,7 @@ class AppDependencies {
     FruitScanRepository scan,
   }) _buildRepositories() {
     if (!AppConfig.useMockData) {
-      // TODO(backend): kembalikan implementasi API di sini.
-      throw UnimplementedError('Isi implementasi repository API lalu hapus baris ini.');
+            throw UnimplementedError('Isi implementasi repository API lalu hapus baris ini.');
     }
     return (
       auth: MockAuthRepository(),

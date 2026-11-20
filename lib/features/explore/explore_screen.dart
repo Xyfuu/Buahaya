@@ -16,8 +16,6 @@ import '../../shared/widgets/pill_badge.dart';
 import '../../shared/widgets/surface_card.dart';
 import 'store_detail_sheet.dart';
 
-/// Frame Figma "Explore": peta + pencarian + daftar toko terdekat.
-/// Peta memakai OpenStreetMap (flutter_map), tanpa API key.
 class ExploreScreen extends StatefulWidget {
   const ExploreScreen({super.key});
 
@@ -178,8 +176,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
             ],
           ),
         ),
-        // Peta (tinggi tetap, tidak ikut scroll daftar)
-        Padding(
+                Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: ClipRRect(
             borderRadius: BorderRadius.circular(16),

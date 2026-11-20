@@ -13,7 +13,6 @@ import '../../shared/widgets/sub_screen_header.dart';
 import '../../shared/widgets/surface_card.dart';
 import 'widgets/fruit_picker.dart';
 
-/// Frame Figma "Create shopping list".
 class CreateListScreen extends StatefulWidget {
   const CreateListScreen({super.key});
 
