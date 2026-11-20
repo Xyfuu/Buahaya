@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import '../../core/theme/app_colors.dart';
 import 'app_text_field.dart';
 
-/// Field kata sandi: teks disamarkan "****", ikon mata untuk melihat/menyembunyikan.
 class PasswordField extends StatefulWidget {
   const PasswordField({
     super.key,

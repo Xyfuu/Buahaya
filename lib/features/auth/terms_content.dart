@@ -1,4 +1,3 @@
-/// Isi Terms of Service (dari Figma). Ganti dengan fetch dari backend bila perlu.
 sealed class TermsBlock {
   const TermsBlock();
 }
@@ -8,7 +7,6 @@ class TermsPara extends TermsBlock {
   final String text;
 }
 
-/// Butir dengan judul tebal: "Informational Purposes Only: ...".
 class TermsBullet extends TermsBlock {
   const TermsBullet(this.text, {this.lead});
   final String? lead;

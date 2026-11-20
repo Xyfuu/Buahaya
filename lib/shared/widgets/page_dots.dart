@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../../core/theme/app_colors.dart';
 
-/// Indikator titik yang ikut bergeser (interpolasi) saat PageView digeser.
 class PageDots extends StatelessWidget {
   const PageDots({super.key, required this.controller, required this.count});
 

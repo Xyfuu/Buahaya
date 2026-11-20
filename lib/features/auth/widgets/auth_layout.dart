@@ -5,7 +5,6 @@ import '../../../core/theme/app_colors.dart';
 import '../../../shared/widgets/brand_mark.dart';
 import '../../../shared/widgets/glow_blob.dart';
 
-/// Latar hijau + blob blur + logo/judul, dipakai Login, Sign up, dan Reset password.
 class AuthLayout extends StatelessWidget {
   const AuthLayout({super.key, required this.child, this.footer});
 
@@ -54,7 +53,6 @@ class AuthLayout extends StatelessWidget {
   }
 }
 
-/// Teks error kecil merah.
 class FieldHint extends StatelessWidget {
   const FieldHint(this.text, {super.key});
   final String text;

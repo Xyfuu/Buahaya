@@ -5,7 +5,6 @@ import '../domain/models/profile.dart';
 import '../domain/models/shopping.dart';
 import '../domain/repositories/shopping_repository.dart';
 
-/// State shopping list aktif, keranjang, dan riwayat.
 class ShoppingController extends ChangeNotifier {
   ShoppingController(this._repo);
 
@@ -15,8 +14,7 @@ class ShoppingController extends ChangeNotifier {
   List<ShoppingTrip> history = const [];
   List<Fruit> catalog = const [];
 
-  /// Buah hasil scan tanpa list aktif (digabung saat list dibuat).
-  List<ShoppingItem> looseCart = const [];
+    List<ShoppingItem> looseCart = const [];
   bool loading = false;
 
   bool get hasActive => active != null;
@@ -47,8 +45,7 @@ class ShoppingController extends ChangeNotifier {
     notifyListeners();
   }
 
-  // ---------------------------------------------------------------- helpers
-  Future<void> _persist(ShoppingList list) async {
+    Future<void> _persist(ShoppingList list) async {
     active = list;
     notifyListeners();
     try {
@@ -69,8 +66,7 @@ class ShoppingController extends ChangeNotifier {
     return items.where((i) => i.planned > 0 || i.inCart > 0).toList();
   }
 
-  // ---------------------------------------------------------------- create
-  Future<void> createList({
+    Future<void> createList({
     required String name,
     String? store,
     required Map<String, int> quantities,
@@ -83,8 +79,7 @@ class ShoppingController extends ChangeNotifier {
       final fruit = catalog.firstWhere((f) => f.id == id);
       items.add(ShoppingItem(fruit: fruit, planned: qty));
     });
-    // gabungkan keranjang hasil scan tanpa list
-    var draft = ShoppingList(
+        var draft = ShoppingList(
       id: 'list-${DateTime.now().millisecondsSinceEpoch}',
       name: name.trim(),
       store: (store == null || store.trim().isEmpty) ? null : store.trim(),
@@ -107,8 +102,7 @@ class ShoppingController extends ChangeNotifier {
     await _persist(draft);
   }
 
-  /// Buat list bersama dari form "Shop with friends or family".
-  Future<void> createSharedList({
+    Future<void> createSharedList({
     required String identifier,
     required String name,
     required UserProfile owner,
@@ -119,8 +113,7 @@ class ShoppingController extends ChangeNotifier {
     await _persist(list.copyWith(members: [...list.members, member]));
   }
 
-  // ---------------------------------------------------------------- plan
-  Future<void> applyPlan(Map<String, int> quantities) async {
+    Future<void> applyPlan(Map<String, int> quantities) async {
     final list = active;
     if (list == null) return;
     var next = list;
@@ -150,8 +143,7 @@ class ShoppingController extends ChangeNotifier {
         items: _mutateItem(list, fruit, (i) => i.copyWith(inCart: qty < 0 ? 0 : qty))));
   }
 
-  /// Dipanggil setelah konfirmasi scan.
-  Future<void> addScanned(Fruit fruit, int count) async {
+    Future<void> addScanned(Fruit fruit, int count) async {
     if (count <= 0) return;
     final list = active;
     if (list == null) {
@@ -170,8 +162,7 @@ class ShoppingController extends ChangeNotifier {
         items: _mutateItem(list, fruit, (i) => i.copyWith(inCart: i.inCart + count))));
   }
 
-  // ---------------------------------------------------------------- lifecycle
-  Future<void> finish() async {
+    Future<void> finish() async {
     final list = active;
     if (list == null) return;
     try {
@@ -194,8 +185,7 @@ class ShoppingController extends ChangeNotifier {
     } catch (_) {}
   }
 
-  /// Dipakai saat menerima undangan.
-  void joinShared(ShoppingList list) {
+    void joinShared(ShoppingList list) {
     active = list;
     notifyListeners();
   }
@@ -206,9 +196,7 @@ class ShoppingController extends ChangeNotifier {
     await _persist(list.copyWith(name: name.trim()));
   }
 
-  // ---------------------------------------------------------------- sharing
-  /// Kembalikan pesan error atau null.
-  Future<String?> invite(String identifier) async {
+      Future<String?> invite(String identifier) async {
     final list = active;
     final id = identifier.trim();
     if (list == null) return 'No active list.';

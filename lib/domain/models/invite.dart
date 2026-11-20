@@ -1,4 +1,3 @@
-/// Undangan bergabung ke shopping list milik pengguna lain.
 class ListInvite {
   const ListInvite({
     required this.id,

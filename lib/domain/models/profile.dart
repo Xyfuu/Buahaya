@@ -15,7 +15,7 @@ class UserProfile {
   final String fullName;
   final String username;
   final String email;
-  final String? avatarUrl; // URL remote atau path file lokal
+  final String? avatarUrl;
   final bool notificationsEnabled;
   final int shoppingListCount;
   final int freshCheckCount;

@@ -13,7 +13,6 @@ import '../../core/constants/app_assets.dart';
 import 'brand_mark.dart';
 import 'user_avatar.dart';
 
-/// Header tetap untuk tab utama: logo + judul halaman, lonceng, avatar.
 class AppHeader extends StatelessWidget {
   const AppHeader({super.key, required this.subtitle, required this.onBell, required this.onAvatar});
 

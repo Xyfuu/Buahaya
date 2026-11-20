@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import '../../core/extensions/context_x.dart';
 import '../../core/theme/app_colors.dart';
 
-/// Field input: label (kiri) + error/"Required" (kanan), ikon kiri, aksi kanan.
 class AppTextField extends StatelessWidget {
   const AppTextField({
     super.key,
@@ -130,8 +129,7 @@ class AppTextField extends StatelessWidget {
     );
   }
 
-  /// Pesan error (merah) atau tanda "Required", rata kanan di baris label.
-  Widget _trailingTag(TextTheme text, bool hasError) {
+    Widget _trailingTag(TextTheme text, bool hasError) {
     if (hasError) {
       return Text(
         errorText!,

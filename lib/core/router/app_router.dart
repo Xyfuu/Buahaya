@@ -47,8 +47,7 @@ GoRouter createRouter(AuthController auth) {
         path: AppRoutes.login,
         builder: (_, __) => const AuthScreen(),
         routes: [
-          // Pop-up "Reset password" di atas halaman login.
-          GoRoute(
+                    GoRoute(
             path: 'forgot',
             pageBuilder: (context, state) => CustomTransitionPage<bool>(
               key: state.pageKey,
@@ -73,8 +72,7 @@ GoRouter createRouter(AuthController auth) {
         builder: (_, state) => ResetPasswordScreen(token: state.uri.queryParameters['token'] ?? ''),
       ),
 
-      // Tab utama dengan header + bottom navigation tetap.
-      StatefulShellRoute.indexedStack(
+            StatefulShellRoute.indexedStack(
         builder: (context, state, shell) => ShellScaffold(shell: shell),
         branches: [
           StatefulShellBranch(routes: [
@@ -95,8 +93,7 @@ GoRouter createRouter(AuthController auth) {
         ],
       ),
 
-      // Layar penuh (tanpa bottom navigation).
-      GoRoute(path: AppRoutes.scan, builder: (_, __) => const ScanScreen()),
+            GoRoute(path: AppRoutes.scan, builder: (_, __) => const ScanScreen()),
       GoRoute(path: AppRoutes.createList, builder: (_, __) => const CreateListScreen()),
       GoRoute(path: AppRoutes.addToList, builder: (_, __) => const AddToListScreen()),
       GoRoute(path: AppRoutes.editProfile, builder: (_, __) => const EditProfileScreen()),

@@ -6,7 +6,6 @@ import '../../core/extensions/context_x.dart';
 import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_shadows.dart';
 
-/// Toast hijau tua di bagian bawah layar (mis. "Reset link sent.").
 abstract final class AppToast {
   static OverlayEntry? _entry;
   static Timer? _timer;

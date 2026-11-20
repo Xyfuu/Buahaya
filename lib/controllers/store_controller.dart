@@ -36,8 +36,7 @@ class StoreController extends ChangeNotifier {
     return list;
   }
 
-  /// Toko terdekat untuk Beranda.
-  List<FruitStore> nearest([int n = 2]) {
+    List<FruitStore> nearest([int n = 2]) {
     final l = List.of(_all)..sort((a, b) => a.distanceKm.compareTo(b.distanceKm));
     return l.take(n).toList();
   }

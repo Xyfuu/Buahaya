@@ -10,8 +10,6 @@ import '../../../shared/widgets/app_text_field.dart';
 import '../../../shared/widgets/app_toast.dart';
 import '../../../shared/widgets/info_banner.dart';
 
-/// Isi sheet "Reset password" / "Change password" (kirim tautan ke email).
-/// Layar dikunci (tidak scroll). [onClose] dipanggil dengan true bila tautan terkirim.
 class ResetLinkSheetContent extends StatefulWidget {
   const ResetLinkSheetContent({
     super.key,

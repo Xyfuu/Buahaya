@@ -2,7 +2,6 @@ import '../../domain/models/scan.dart';
 import '../../domain/repositories/fruit_scan_repository.dart';
 import 'mock_seed.dart';
 
-/// Mock AI: selalu mengenali apel. Ganti dengan panggilan ke backend/model.
 class MockFruitScanRepository implements FruitScanRepository {
   @override
   Future<LiveDetection?> detectLive(ScanFrame frame) async {

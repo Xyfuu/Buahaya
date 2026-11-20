@@ -7,7 +7,6 @@ import '../../../shared/widgets/fruit_image.dart';
 import '../../../shared/widgets/quantity_stepper.dart';
 import '../../../shared/widgets/surface_card.dart';
 
-/// Pencarian + daftar "Choose fresh fruit" dengan stepper / tombol "+ Add".
 class FruitPicker extends StatefulWidget {
   const FruitPicker({
     super.key,
@@ -141,7 +140,6 @@ class _FruitPickerState extends State<FruitPicker> {
   }
 }
 
-/// Footer tetap: ringkasan pilihan + tombol simpan + batal.
 class PickerFooter extends StatelessWidget {
   const PickerFooter({
     super.key,
@@ -201,7 +199,6 @@ class PickerFooter extends StatelessWidget {
   }
 }
 
-/// Tombol primer kecil agar import AppButton tetap lokal.
 class AppButtonHost extends StatelessWidget {
   const AppButtonHost({super.key, required this.label, required this.enabled, required this.loading, required this.onTap});
 

@@ -1,5 +1,3 @@
-/// Buah di katalog. [imageUrl] bisa path aset (assets/...) atau URL (http...).
-/// Jika null, tampilkan [emoji].
 class Fruit {
   const Fruit({
     required this.id,

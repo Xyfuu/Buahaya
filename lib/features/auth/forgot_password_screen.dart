@@ -7,8 +7,6 @@ import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_shadows.dart';
 import 'widgets/reset_link_sheet.dart';
 
-/// Frame Figma "Forgot password": pop-up di atas halaman Log in.
-/// Layar terkunci (tidak scroll) dan naik mengikuti keyboard.
 class ForgotPasswordScreen extends StatelessWidget {
   const ForgotPasswordScreen({super.key});
 

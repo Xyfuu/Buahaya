@@ -8,12 +8,10 @@ import 'active_list_view.dart';
 import 'empty_list_view.dart';
 import 'history_view.dart';
 
-/// Tab "Lists": Active list | History (Done).
 class ListsScreen extends StatefulWidget {
   const ListsScreen({super.key, this.initialTab});
 
-  /// "history" untuk membuka tab riwayat (mis. dari Profile > View all).
-  final String? initialTab;
+    final String? initialTab;
 
   @override
   State<ListsScreen> createState() => _ListsScreenState();

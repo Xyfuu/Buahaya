@@ -2,7 +2,6 @@ import 'dart:ui' show ImageFilter;
 
 import 'package:flutter/material.dart';
 
-/// Lingkaran blur dekoratif (sigma = blur / 2).
 class GlowBlob extends StatelessWidget {
   const GlowBlob({super.key, required this.size, required this.color, required this.blur});
 

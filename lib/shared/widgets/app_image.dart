@@ -2,8 +2,6 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 
-/// Gambar dari aset lokal (diawali "assets/"), URL (diawali "http"),
-/// atau file lokal. Jika gagal dimuat atau kosong, tampilkan [fallback].
 class AppImage extends StatelessWidget {
   const AppImage({
     super.key,

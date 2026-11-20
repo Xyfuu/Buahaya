@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-/// Teks tautan: menjadi bold + underline saat di-hover (mouse) atau ditekan (sentuh).
 class HoverText extends StatefulWidget {
   const HoverText({
     super.key,

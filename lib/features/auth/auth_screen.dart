@@ -18,7 +18,6 @@ import '../../shared/widgets/pill_tabs.dart';
 import '../../shared/widgets/surface_card.dart';
 import 'widgets/auth_layout.dart';
 
-/// Frame Figma "Log in" dan "Sign up" (tab). Termasuk varian error password.
 class AuthScreen extends StatefulWidget {
   const AuthScreen({super.key});
 
@@ -29,15 +28,13 @@ class AuthScreen extends StatefulWidget {
 class _AuthScreenState extends State<AuthScreen> {
   int _tab = 0;
 
-  // Log in
-  final _loginId = TextEditingController();
+    final _loginId = TextEditingController();
   final _loginPw = TextEditingController();
   bool _remember = true;
   String? _loginIdError;
   String? _loginPwError;
 
-  // Sign up
-  final _suUser = TextEditingController();
+    final _suUser = TextEditingController();
   final _suEmail = TextEditingController();
   final _suPw = TextEditingController();
   final _suConfirm = TextEditingController();
@@ -55,8 +52,7 @@ class _AuthScreenState extends State<AuthScreen> {
     super.dispose();
   }
 
-  // ------------------------------------------------------------------ actions
-  Future<void> _openTerms() async {
+    Future<void> _openTerms() async {
     final accepted = await context.push<bool>(AppRoutes.terms);
     if (!mounted || accepted == null) return;
     if (_tab == 1) setState(() => _agree = accepted);
@@ -78,8 +74,7 @@ class _AuthScreenState extends State<AuthScreen> {
     final err = await context.read<AuthController>().login(_loginId.text.trim(), _loginPw.text, remember: _remember);
     if (!mounted) return;
     if (err != null) setState(() => _loginPwError = err);
-    // Berhasil: router (redirect) otomatis membuka Home.
-  }
+      }
 
   Future<void> _signUp() async {
     FocusScope.of(context).unfocus();
@@ -116,8 +111,7 @@ class _AuthScreenState extends State<AuthScreen> {
     AppToast.show(context, title: 'Account created.', message: 'Check your email to verify it, then log in.');
   }
 
-  // ------------------------------------------------------------------ build
-  @override
+    @override
   Widget build(BuildContext context) {
     final busy = context.select<AuthController, bool>((a) => a.busy);
     return AuthLayout(

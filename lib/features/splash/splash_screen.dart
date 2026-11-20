@@ -4,7 +4,6 @@ import '../../core/extensions/context_x.dart';
 import '../../core/theme/app_colors.dart';
 import '../../shared/widgets/brand_mark.dart';
 
-/// Layar sementara saat sesi dicek (restoreSession). Navigasi diatur redirect router.
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
 

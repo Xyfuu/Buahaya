@@ -12,7 +12,6 @@ import '../../../shared/widgets/app_button.dart';
 import '../../../shared/widgets/app_popups.dart';
 import '../../../shared/widgets/app_toast.dart';
 
-/// Sheet "Create a fruit haul": preview kartu + toggle isi + tombol unduh.
 Future<void> showHaulPreviewSheet(BuildContext context, ShoppingTrip trip) {
   return showAppSheet<void>(
     context,
@@ -33,8 +32,7 @@ class _HaulPreviewState extends State<_HaulPreview> {
   bool _duration = true;
   bool _date = true;
 
-  /// Foto latar pilihan pengguna (kamera/galeri). Null = pakai template default.
-  String? _bgPath;
+    String? _bgPath;
 
   Future<void> _changeBackground() async {
     final picked = await showAppSheet<XFile?>(
@@ -183,8 +181,7 @@ class _HaulCard extends StatelessWidget {
         child: Stack(
           fit: StackFit.expand,
           children: [
-            // Lapisan 1: foto latar, atau gradasi jika foto belum ada
-            AppImage(
+                        AppImage(
               source: backgroundPath ?? AppAssets.haulBackground,
               fallback: const DecoratedBox(
                 decoration: BoxDecoration(
@@ -196,8 +193,7 @@ class _HaulCard extends StatelessWidget {
                 ),
               ),
             ),
-            // Lapisan 2: gelap di bawah agar teks terbaca
-            const DecoratedBox(
+                        const DecoratedBox(
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   colors: [Color(0x59000000), Color(0xCC000000)],
@@ -206,8 +202,7 @@ class _HaulCard extends StatelessWidget {
                 ),
               ),
             ),
-            // Lapisan 3: teks dan chip
-            Padding(
+                        Padding(
               padding: const EdgeInsets.all(14),
               child: Column(
                 children: [

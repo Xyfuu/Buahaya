@@ -74,7 +74,6 @@ class GuideCardData {
   final VoidCallback onAction;
 }
 
-/// Kartu di carousel Beranda. Seluruh kartu dan tombolnya bisa diklik.
 class GuideCard extends StatelessWidget {
   const GuideCard({super.key, required this.data});
 

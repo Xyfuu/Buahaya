@@ -15,7 +15,6 @@ import '../../shared/widgets/quantity_stepper.dart';
 import '../../shared/widgets/surface_card.dart';
 import 'widgets/list_dialogs.dart';
 
-/// Frame Figma "Personal/Shared shopping list – Active".
 class ActiveListView extends StatelessWidget {
   const ActiveListView({super.key, required this.list, required this.onFinished});
 
@@ -38,8 +37,7 @@ class ActiveListView extends StatelessWidget {
       physics: const AlwaysScrollableScrollPhysics(),
       padding: const EdgeInsets.fromLTRB(16, 4, 16, 24),
       children: [
-        // --- Header list
-        SurfaceCard(
+                SurfaceCard(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -103,12 +101,10 @@ class ActiveListView extends StatelessWidget {
         ),
         const SizedBox(height: 16),
 
-        // --- Sharing
-        if (!list.isShared) _ShopTogetherCard(list: list) else _MembersCard(list: list),
+                if (!list.isShared) _ShopTogetherCard(list: list) else _MembersCard(list: list),
         const SizedBox(height: 20),
 
-        // --- Shopping plan
-        Row(
+                Row(
           children: [
             const Icon(Icons.checklist_rounded, size: 20, color: AppColors.onSurface),
             const SizedBox(width: 8),
@@ -153,8 +149,7 @@ class ActiveListView extends StatelessWidget {
         ),
         const SizedBox(height: 24),
 
-        // --- In cart
-        Row(
+                Row(
           children: [
             const Icon(Icons.check_circle_outline_rounded, size: 20, color: AppColors.onSurface),
             const SizedBox(width: 8),

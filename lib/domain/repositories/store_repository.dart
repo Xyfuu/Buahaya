@@ -7,8 +7,7 @@ class GeoPoint {
 }
 
 abstract class StoreRepository {
-  /// Lokasi pengguna (ganti dengan plugin lokasi/geolocator).
-  Future<GeoPoint> currentLocation();
+    Future<GeoPoint> currentLocation();
 
   Future<String> currentAreaName();
 

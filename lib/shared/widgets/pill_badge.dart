@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../../core/extensions/context_x.dart';
 
-/// Chip berbentuk pil (status, jumlah item, dll).
 class PillBadge extends StatelessWidget {
   const PillBadge({
     super.key,

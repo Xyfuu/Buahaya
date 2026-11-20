@@ -14,8 +14,6 @@ import '../../shared/widgets/password_field.dart';
 import '../../shared/widgets/surface_card.dart';
 import 'widgets/auth_layout.dart';
 
-/// Frame Figma "Redirect pass page" (dibuka dari tautan email reset).
-/// Deep link: /reset-password?token=XXXX
 class ResetPasswordScreen extends StatefulWidget {
   const ResetPasswordScreen({super.key, required this.token});
 

@@ -6,8 +6,6 @@ import '../../core/extensions/context_x.dart';
 import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_shadows.dart';
 
-/// Bottom navigation tetap (tidak ikut scroll) dengan tombol Scan Fruit di tengah.
-/// Index tab: 0 Home, 1 Lists, 2 Explore, 3 Profile. Scan lewat [onScan].
 class AppBottomNav extends StatelessWidget {
   const AppBottomNav({
     super.key,

@@ -7,7 +7,6 @@ import '../features/notifications/invite_popup.dart';
 import '../shared/widgets/app_bottom_nav.dart';
 import '../shared/widgets/app_header.dart';
 
-/// Kerangka tab utama: header & bottom nav TETAP, hanya isi tengah yang scroll.
 class ShellScaffold extends StatelessWidget {
   const ShellScaffold({super.key, required this.shell});
 

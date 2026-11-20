@@ -3,12 +3,6 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'app_colors.dart';
 
-/// Tipografi Buahaya (Plus Jakarta Sans).
-///
-/// headlineLarge 35 Bold | headlineMedium 24 Bold | titleLarge 20 Bold
-/// titleMedium 18 SemiBold | titleSmall 16 Bold
-/// bodyLarge 14 | bodyMedium 12 | bodySmall 11
-/// labelLarge 14 SemiBold | labelMedium 12 SemiBold | labelSmall 10 Bold
 abstract final class AppTextStyles {
   static TextStyle _s(double size, FontWeight w,
       {double? height, double ls = 0, Color color = AppColors.onSurface}) {

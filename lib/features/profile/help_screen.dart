@@ -9,7 +9,6 @@ import '../../core/theme/app_colors.dart';
 import '../../shared/widgets/sub_screen_header.dart';
 import '../../shared/widgets/surface_card.dart';
 
-/// Help & Privacy: FAQ, link ke Terms, dan kontak support.
 class HelpScreen extends StatelessWidget {
   const HelpScreen({super.key});
 

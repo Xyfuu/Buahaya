@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_shadows.dart';
 
-/// Kartu putih radius 12 dengan bayangan halus.
 class SurfaceCard extends StatelessWidget {
   const SurfaceCard({
     super.key,

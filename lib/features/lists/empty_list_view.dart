@@ -12,7 +12,6 @@ import '../../shared/widgets/app_text_field.dart';
 import '../../shared/widgets/app_toast.dart';
 import '../../shared/widgets/surface_card.dart';
 
-/// Ilustrasi keranjang untuk empty state.
 class BasketIllustration extends StatelessWidget {
   const BasketIllustration({super.key});
 
@@ -46,7 +45,6 @@ class BasketIllustration extends StatelessWidget {
   }
 }
 
-/// State "Shopping list – Empty": ajakan membuat list + form Shop with friends.
 class EmptyListView extends StatefulWidget {
   const EmptyListView({super.key});
 
