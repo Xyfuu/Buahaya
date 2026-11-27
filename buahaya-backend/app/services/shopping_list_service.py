@@ -152,3 +152,73 @@ class ShoppingListService:
             members=members,
         )
 
+
+    def transfer_ownership(self, user_id, new_owner_id):
+        try:
+            membership = self.repository.get_active_membership(user_id)
+
+            if not membership:
+                raise LookupError(
+                    "You do not belong to an active shopping list"
+                )
+
+            shopping_list = self.repository.get_list_by_id(
+                membership.shopping_list_id
+            )
+
+            if not shopping_list or shopping_list.status != "active":
+                raise ValueError("Shopping list is not active")
+
+            if (
+                membership.role != "owner"
+                or shopping_list.owner_id != user_id
+            ):
+                raise PermissionError(
+                    "Only the current owner can transfer ownership"
+                )
+
+            if new_owner_id == user_id:
+                raise ValueError("You are already the owner")
+
+            members = self.repository.get_active_members_for_update(
+                shopping_list.id
+            )
+
+            new_owner_membership = next(
+                (
+                    member
+                    for member in members
+                    if member.user_id == new_owner_id
+                ),
+                None,
+            )
+
+            if not new_owner_membership:
+                raise LookupError(
+                    "New owner must be an active member of this shopping list"
+                )
+
+            old_owner_membership = next(
+                (
+                    member
+                    for member in members
+                    if member.user_id == user_id
+                ),
+                None,
+            )
+
+            if not old_owner_membership:
+                raise LookupError("Current owner membership not found")
+
+            old_owner_membership.role = "member"
+            new_owner_membership.role = "owner"
+            shopping_list.owner_id = new_owner_id
+
+            self.db.commit()
+            self.db.refresh(shopping_list)
+
+            return ShoppingListResponse.model_validate(shopping_list)
+
+        except Exception:
+            self.db.rollback()
+            raise

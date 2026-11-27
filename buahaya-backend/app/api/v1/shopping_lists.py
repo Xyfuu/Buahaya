@@ -13,7 +13,7 @@ from app.schemas.shopping_list import (
 )
 from app.schemas.shopping_list_member import ShoppingListMembersResponse
 from app.services.shopping_list_service import ShoppingListService
-
+from app.schemas.shopping_list_ownership import TransferOwnershipRequest
 
 router = APIRouter(
     prefix="/shopping-lists",
@@ -112,3 +112,28 @@ def get_my_shopping_list_members(
             status_code=status.HTTP_404_NOT_FOUND,
             detail=str(error),
         )
+
+
+@router.post(
+    "/me/transfer-ownership",
+    response_model=ShoppingListResponse,
+)
+def transfer_shopping_list_ownership(
+    data: TransferOwnershipRequest,
+    current_user: UserResponse = Depends(get_current_user),
+    db: Session = Depends(get_db),
+):
+    try:
+        return ShoppingListService(db).transfer_ownership(
+            current_user.id,
+            data.new_owner_id,
+        )
+
+    except PermissionError as exc:
+        raise HTTPException(status_code=403, detail=str(exc))
+
+    except LookupError as exc:
+        raise HTTPException(status_code=404, detail=str(exc))
+
+    except ValueError as exc:
+        raise HTTPException(status_code=409, detail=str(exc))

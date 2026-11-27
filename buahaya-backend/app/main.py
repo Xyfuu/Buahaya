@@ -7,7 +7,10 @@ from app.core.config import settings
 from app.db.session import get_db
 from app.api.v1.auth import router as auth_router
 from app.api.v1.shopping_lists import router as shopping_lists_router
-
+from app.api.v1.shopping_items import router as shopping_items_router
+from app.api.v1.shopping_list_invitations import router as invitations_router
+from app.api.v1.notifications import router as notifications_router
+from app.api.v1.device_tokens import router as device_tokens_router
 
 app = FastAPI(
     title=settings.APP_NAME,
@@ -21,6 +24,26 @@ app.include_router(
 
 app.include_router(
     shopping_lists_router,
+    prefix=settings.API_V1_PREFIX,
+)
+
+app.include_router(
+    shopping_items_router,
+    prefix=settings.API_V1_PREFIX,
+)
+
+app.include_router(
+    invitations_router,
+    prefix=settings.API_V1_PREFIX,
+)
+
+app.include_router(
+    notifications_router,
+    prefix=settings.API_V1_PREFIX,
+)
+
+app.include_router(
+    device_tokens_router,
     prefix=settings.API_V1_PREFIX,
 )
 

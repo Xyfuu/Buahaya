@@ -81,3 +81,17 @@ class ShoppingListRepository:
         return self.db.execute(statement).all()
 
 
+    def get_active_members_for_update(self, shopping_list_id):
+        from sqlalchemy import select
+
+        return list(
+            self.db.scalars(
+                select(ShoppingListMember)
+                .where(
+                    ShoppingListMember.shopping_list_id == shopping_list_id,
+                    ShoppingListMember.left_at.is_(None),
+                )
+                .with_for_update()
+            ).all()
+        )
+
